@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ .book-event {
+   text-align: center;
+   padding-top: 60px;
+ }
+.event-table {
+  display: flex;
+  justify-content: center;
+}

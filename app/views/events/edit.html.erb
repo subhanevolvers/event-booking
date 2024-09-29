@@ -1,0 +1,34 @@
+<h1>Edit Event</h1>
+
+<%= form_with model: @event, local: true do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div>
+    <%= f.label :available_tickets %>
+    <%= f.number_field :available_tickets %>
+  </div>
+
+  <div>
+    <%= f.label :schedule_at %>
+    <%= f.datetime_select :schedule_at %>
+  </div>
+
+  <div>
+    <%= f.submit 'Update Event', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Cancel', event_path(@event), class: 'btn btn-secondary' %>
