@@ -1,7 +1,6 @@
 <h1>Welcome to BookMe!</h1>
 <% if user_signed_in? %>
- <div> Welcome <%= current_user.email %> </div>
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+ <%= render 'user_info' %>
 <% else %>
-  <%= button_to "Sign in", new_user_session_path %>
+  <%= button_to "Create account", new_user_session_path %>
 <% end %>

@@ -1,0 +1,30 @@
+<h1>My Events</h1>
+<% if user_signed_in? %>
+ <% if @events.any? %>
+  <div class='event-table'>
+    <table>
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Description</th>
+          <th>Available Tickets</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+          <tr>
+            <td><%= link_to event.name, event_path(event) %></td>
+            <td><%= event.description %></td>
+            <td><%= event.available_tickets %></td>
+            <td><%= link_to 'View', event_path(event) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+    <% end %>
+</br>
+</br>
+  <p><%= link_to 'Create a New Event', new_event_path %></p>
+<% end %>

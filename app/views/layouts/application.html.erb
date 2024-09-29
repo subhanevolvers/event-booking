@@ -9,9 +9,19 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class='book-event'>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <div class="collapse navbar-collapse justify-content-end">
+      <% if user_signed_in? %>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> |
+            <%= link_to 'Home', events_path %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
   </body>
 </html>
