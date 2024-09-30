@@ -1,0 +1,23 @@
+<h1>Your Bookings</h1>
+<div class='event-table'>
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Booked Tickets</th>
+        <th>Event Location</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= link_to booking.event&.name, booking_path(booking) %></td>
+          <td><%= booking.booked_tickets %></td>
+          <td><%= booking.event&.location %></td>
+          <td><%= booking.event&.schedule_at.strftime("%B %d, %Y at %I:%M %p") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
