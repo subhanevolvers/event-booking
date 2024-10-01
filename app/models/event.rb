@@ -1,12 +1,12 @@
 class Event < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
   validates :name, uniqueness: true
   has_many :bookings
 
-  # after_commit :cache_available_tickets
+  after_commit :cache_available_tickets
 
   def cache_available_tickets
-    Rails.cache.write("available_tickets_#{self.id}", tickets_availability, expires_in: 20.minutes)
+    Rails.cache.write("available_tickets_#{self.id}", available_tickets, expires_in: 20.minutes)
   end
 
   def tickets_availability
@@ -14,4 +14,5 @@ class Event < ApplicationRecord
       available_tickets
     end
   end
+
 end
