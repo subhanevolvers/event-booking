@@ -112,3 +112,26 @@ tr:hover {
   cursor: not-allowed;
   color: red;
 }
+
+.link-button {
+  background: none;         /* Remove default button background */
+  border: none;            /* Remove default button border */
+  color: #007bff;          /* Link color (Bootstrap primary) */
+  text-decoration: underline; /* Underline the text like a link */
+  cursor: pointer;         /* Show pointer cursor on hover */
+  padding: 0;              /* Remove default padding */
+  font: inherit;           /* Inherit font properties */
+}
+
+.link-button:hover {
+  color: #0056b3;          /* Darken color on hover */
+  text-decoration: underline; /* Keep underline on hover */
+}
+
+.link-button:focus {
+  outline: none;           /* Remove outline on focus */
+}
+
+.button_to{
+  display: contents;
+}

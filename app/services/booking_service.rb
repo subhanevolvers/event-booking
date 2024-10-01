@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookingService
   attr_reader :event, :requested_tickets, :user
 
@@ -23,20 +25,20 @@ class BookingService
 
       update_available_tickets(booking.booked_tickets)
 
-      { success: true, booking: booking }
+      { success: true, booking: }
     end
   rescue ActiveRecord::RecordInvalid => e
     Rails.logger.error("Booking creation failed: #{e.message}")
     { success: false, error: e.message }
-  rescue => e
+  rescue StandardError => e
     Rails.logger.error("Transaction failed: #{e.message}")
-    { success: false, error: "An unexpected error occurred. Please try again." }
+    { success: false, error: 'An unexpected error occurred. Please try again.' }
   end
 
   private
 
   def create_and_save_booking
-    booking = event.bookings.new(booked_tickets: requested_tickets, user: user)
+    booking = event.bookings.new(booked_tickets: requested_tickets, user:)
     booking.save!
     booking
   end

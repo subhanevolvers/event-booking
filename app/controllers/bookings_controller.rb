@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_booking, only: [:show]
@@ -16,7 +18,7 @@ class BookingsController < ApplicationController
     @event = Event.find(params[:booking][:event_id])
     @requested_tickets = params[:booking][:booked_tickets]
 
-    service = BookingService.new(@event, @requested_tickets , current_user)
+    service = BookingService.new(@event, @requested_tickets, current_user)
     result = service.create_booking
     if result[:success]
       redirect_to bookings_path, notice: 'Booking was successfully created.'
