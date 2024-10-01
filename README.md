@@ -1,24 +1,52 @@
-# README
+# Event Booking System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
 
-Things you may want to cover:
+The Event Booking System is a web application designed to facilitate the creation, management, and booking of events. Users can browse available events, book tickets, and manage their bookings seamlessly. The application aims to provide an intuitive user experience while ensuring robust backend functionalities for event organizers.
 
-* Ruby version
+## Table of Contents
 
-* System dependencies
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Architecture](#architecture)
+- [Setup Instructions](#setup-instructions)
+- [Usage](#usage)
 
-* Configuration
+## Features
 
-* Database creation
+- User registration and authentication (Devise)
+- Create, view, and manage events
+- Browse available events
+- Ticket booking
+- Concurrency handling with caching
 
-* Database initialization
+## Technologies Used
 
-* How to run the test suite
+- **Backend**: Ruby on Rails
+- **Frontend**: HTML, CSS, JavaScript
+- **Database**: PostgreSQL
+- **Authentication**: Devise for user authentication
+- **Caching**: Rails caching for performance optimization
 
-* Services (job queues, cache servers, search engines, etc.)
+## Architecture
 
-* Deployment instructions
+The application follows the MVC (Model-View-Controller) architecture pattern:
 
-* ...
+- **Models**: Handle the application's data and business logic (e.g., User, Event, Booking).
+- **Views**: Define the presentation layer (e.g., ERB templates for event listings, booking forms).
+- **Controllers**: Manage the flow of data between models and views, handling user requests and responses.
+- **Services**: Manage the flow of booking creation with caching and database locking using services.
+
+## Setup Instructions
+
+To set up the Event Booking System locally, follow these steps:
+
+1. **Setup Ruby and Rails**:
+   - We are using Ruby `3.2.4` and Rails `7.0.4`.
+   - Set up PostgreSQL.
+
+2. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/subhanevolvers/event-booking.git
+   cd event-booking
