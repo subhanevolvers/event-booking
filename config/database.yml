@@ -23,9 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: ENV['database_name']
-  username: ENV['database_user']
-  password: ENV['database_password']
+  database: event_booking_development
+  username: subhan
+  password: nlt.pw1122
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,6 +59,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  database: event_booking_test
+  username: subhan
+  password: nlt.pw1122
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

@@ -54,7 +54,7 @@
 }
 
 header {
-  background-color: #f8f9fa;
+  background-color: #ffe6e6;
   padding: 10px;
   text-align: center;
 }
@@ -70,7 +70,7 @@ nav ul li {
 }
 
 footer {
-  background-color: #f8f9fa;
+  background-color: #ffe6e6;
   text-align: center;
   padding: 10px;
   position: fixed;
@@ -105,4 +105,10 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #f1f1f1;
+}
+
+.btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  color: red;
 }

@@ -17,7 +17,12 @@
           <td><%= available_tickets(event) %></td>
           <td>
             <%= link_to 'View', event_path(event) %> |
-            <%= link_to 'Buy Tickets', new_booking_path(event_id: event.id) %>
+            <% if available_tickets(event) > 0 %>
+              <%= link_to 'Buy Tickets', new_booking_path(event_id: event.id), class: 'btn', title: 'You can buy more tickets!' %>
+            <% else %>
+              <%= link_to 'Buy Tickets', '#', class: 'btn disabled', title: 'No tickets available to buy', data: { toggle: 'tooltip' }, onclick: 'return false;' %>
+            <% end %>
+
           </td>
         </tr>
       <% end %>
