@@ -13,7 +13,6 @@ class EventsController < ApplicationController
     @event = current_user.events.new
   end
 
-  # Handle event creation
   def create
     @event = current_user.events.build(event_params)
 
