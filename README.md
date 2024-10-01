@@ -50,3 +50,10 @@ To set up the Event Booking System locally, follow these steps:
    ```bash
    git clone https://github.com/subhanevolvers/event-booking.git
    cd event-booking
+
+3. **Start Services**:
+
+    ```bash
+    bundle install
+    rails db:setup
+    rails s
